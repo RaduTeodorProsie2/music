@@ -7,7 +7,7 @@ int main()
     window.setFramerateLimit(144);
 
     sf::Music instrumental;
-    const bool open = instrumental.openFromFile("../assets/music/Vs Maria/Inst.mp3");
+    const bool open = instrumental.openFromFile("../../assets/music/Vs Maria/Inst.mp3");
     
     if(!open) exit(1);
 
