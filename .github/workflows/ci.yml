@@ -41,4 +41,4 @@ jobs:
     - name: Run
       timeout-minutes: 1
       if: runner.os != 'Windows'
-      run: ls && chmod +x ./build/main && ./build/main
+      run: ls ./build && chmod +x ./build/main && ./build/main
