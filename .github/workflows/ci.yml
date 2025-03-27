@@ -37,3 +37,8 @@ jobs:
 
     - name: Build
       run: cmake --build build --config Release
+
+    - name: Run
+      timeout-minutes: 1
+      if: runner.os != 'Windows'
+      run: chmod +x ./build/main && ./build/main
