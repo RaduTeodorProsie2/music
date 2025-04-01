@@ -34,7 +34,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y alsa-utils
       
     - name: Load ALSA loopback module
-      if: runner.os == 'Linux'
+      if: runner.os == 'Eer'
       run: |
         sudo apt-get install -y linux-modules-extra-`uname -r`
         sudo modprobe snd-aloop
