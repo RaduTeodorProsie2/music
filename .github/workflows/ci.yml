@@ -36,7 +36,7 @@ jobs:
     - name: Load ALSA loopback module
       if: runner.os == 'Linux'
       run: |
-        sudo apt-get install -y linux-modules-extra-$(uname -r)
+        sudo apt-get install -y linux-generic
         sudo modprobe snd-aloop
         sudo amixer -c 0 set Master playback 100% unmute
       
