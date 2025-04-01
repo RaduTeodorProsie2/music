@@ -28,7 +28,18 @@ jobs:
     - name: Install Linux Dependencies
       if: runner.os == 'Linux'
       run: sudo apt-get update && sudo apt-get install libxrandr-dev libxcursor-dev libxi-dev libudev-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev libfreetype-dev
-
+    
+    - name: Install ALSA utilities
+      if: runner.os == 'Linux'
+      run: sudo apt-get update && sudo apt-get install -y alsa-utils
+      
+    - name: Load ALSA dummy module
+      if: runner.os == 'Linux'
+      run: |
+        sudo modprobe snd-dummy
+        sudo modprobe snd-aloop
+        sudo amixer -c 0 set Master playback 100% unmute
+      
     - name: Checkout
       uses: actions/checkout@v4
 
